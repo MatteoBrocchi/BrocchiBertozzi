@@ -6,8 +6,12 @@ class Contenitore {
     }
     compara(cont1, cont2) {
         var diff;
-        if (cont1 instanceof BID)
-            var c = "giusto";
+        if (cont1 instanceof BID && cont2 instanceof BID || cont1 instanceof LAT && cont2 instanceof LAT) {
+            if (cont1.getQuantita() > cont2.getQuantita())
+                diff = cont1.getQuantita() - cont2.getQuantita();
+            else
+                diff = cont2.getQuantita() - cont1.getQuantita();
+        }
         return diff;
     }
     getCodice() { return this.codice; }
@@ -72,7 +76,7 @@ listContenitori.push(B2);
 listContenitori = Utilita.filtraggio(listContenitori, L3);
 listContenitori = Utilita.filtraggio(listContenitori, B3);
 /*COMPARA*/
-B1.compara(B1, B2);
+console.log("Differenza=" + B1.compara(B2, B1));
 /*STAMPA*/
 for (let i = 0; i < listContenitori.length; i++) {
     console.log(listContenitori[i].getNome() + "-" + listContenitori[i].getQuantita() + "-" + listContenitori[i].getCodice());
