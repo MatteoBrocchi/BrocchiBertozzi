@@ -28,3 +28,8 @@ class Utilita {
 interface CMP {
     compara()
 }
+
+var L1: Contenitore = new LAT("", "Acqua", 1);
+var B1: Contenitore = new BID("", "Olio", 5);
+var L2: Contenitore = new LAT("", "Vino", 2);
+var B2: Contenitore = new BID("", "Aceto", 4);
