@@ -21,7 +21,7 @@ class BID extends Contenitore{
 
 class Utilita{
     public filtraggio(z:Contenitore[],contenitore:Contenitore):Contenitore{
-         return z[];
+         return
     }
 }
 
