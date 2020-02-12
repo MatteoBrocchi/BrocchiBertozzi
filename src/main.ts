@@ -57,4 +57,3 @@ var L1: Contenitore = new LAT(Codici.getCodice(), "Acqua", 1);
 var B1: Contenitore = new BID(Codici.getCodice(), "Olio", 5);
 var L2: Contenitore = new LAT(Codici.getCodice(), "Vino", 2);
 var B2: Contenitore = new BID(Codici.getCodice(), "Aceto", 4);
-
