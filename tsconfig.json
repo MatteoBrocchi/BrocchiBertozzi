@@ -1,0 +1,8 @@
+{
+    "compilerOptions": {
+      "target": "ES6", /*specifica versione javascript nella quale verra compilato*/
+      "module": "commonjs",
+      "outDir": "out",
+      "sourceMap": true
+    }
+  }
