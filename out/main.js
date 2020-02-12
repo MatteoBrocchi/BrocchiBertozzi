@@ -76,7 +76,7 @@ listContenitori.push(B2);
 listContenitori = Utilita.filtraggio(listContenitori, L3);
 listContenitori = Utilita.filtraggio(listContenitori, B3);
 /*COMPARA*/
-console.log("Differenza=" + B1.compara(B2, B1));
+console.log("Differenza=" + listContenitori[0].compara(B2, B1)); //B2= 4 B1= 5
 /*STAMPA*/
 for (let i = 0; i < listContenitori.length; i++) {
     console.log(listContenitori[i].getNome() + "-" + listContenitori[i].getQuantita() + "-" + listContenitori[i].getCodice());

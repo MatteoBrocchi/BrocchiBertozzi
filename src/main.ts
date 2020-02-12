@@ -7,7 +7,7 @@ class Contenitore implements ICMP{
         this.quantita = quantita;
         this.codice = codice;
     }
-    public compara(cont1:Contenitore, cont2:Contenitore)
+    public  compara(cont1:Contenitore, cont2:Contenitore)
     {
         var diff:number;
         if( cont1 instanceof BID && cont2 instanceof BID ||cont1 instanceof LAT && cont2 instanceof LAT){
@@ -84,7 +84,7 @@ listContenitori.push(B2);
 listContenitori = Utilita.filtraggio(listContenitori, L3);
 listContenitori = Utilita.filtraggio(listContenitori, B3);
 /*COMPARA*/
-console.log("Differenza="+B1.compara(B2,B1));
+console.log("Differenza="+listContenitori[0].compara(B2,B1));  //B2= 4 B1= 5
 /*STAMPA*/
 for (let i: number = 0; i < listContenitori.length; i++) {
     console.log(listContenitori[i].getNome() + "-" + listContenitori[i].getQuantita() + "-" + listContenitori[i].getCodice());
