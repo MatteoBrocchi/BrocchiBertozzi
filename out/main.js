@@ -1,3 +1,7 @@
-let message = 'Hello World';
-console.log(message);
+class Contenitore {
+    constructor(nome, quantita, codice) {
+        this.nome = nome;
+        this.quantita = quantita;
+    }
+}
 //# sourceMappingURL=main.js.map
