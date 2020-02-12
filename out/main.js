@@ -14,4 +14,9 @@ class BID extends Contenitore {
         super(nome, quantita, codice);
     }
 }
+class Utilita {
+    filtraggio(z, contenitore) {
+        return;
+    }
+}
 //# sourceMappingURL=main.js.map
