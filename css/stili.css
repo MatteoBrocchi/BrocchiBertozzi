@@ -1,17 +1,7 @@
-.card {
-    height: 200px;
-    background-color: transparent;
-    border: 2px solid #f8e71c;
-}
-
 .foo {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-}
-
-body {
-    background-color: #171a29;
-    color: white;
 }
 
 .glow-on-hover {
