@@ -1,4 +1,4 @@
-class Contenitore implements CMP{
+class Contenitore implements ICMP{
     protected nome: string;
     protected quantita: number;
     protected codice: number;
@@ -10,7 +10,10 @@ class Contenitore implements CMP{
     public compara(cont1:Contenitore, cont2:Contenitore)
     {
         var diff:number;
-        if(instanceof cont1=="BID")var c:string= "giusto";
+        if( cont1 instanceof BID && cont2 instanceof BID ||cont1 instanceof LAT && cont2 instanceof LAT){
+            if(cont1.getQuantita()>cont2.getQuantita())diff=cont1.getQuantita()-cont2.getQuantita()
+            else diff=cont2.getQuantita()-cont1.getQuantita()
+        }
         return diff;
     }
     public getCodice(): number { return this.codice; }
@@ -38,7 +41,7 @@ class Utilita {
         return z;
     }
 }
-interface CMP {
+interface ICMP {
 
     compara(cont1:Contenitore,cont2:Contenitore):number;
 }

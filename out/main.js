@@ -6,7 +6,7 @@ class Contenitore {
     }
     compara(cont1, cont2) {
         var diff;
-        if ( instanceof cont1 == "BID")
+        if (cont1 instanceof BID)
             var c = "giusto";
         return diff;
     }
