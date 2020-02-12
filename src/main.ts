@@ -48,7 +48,6 @@ class Codici {
         var random: number = Math.floor(Math.random() * 5999999);
         codici.push(random);
         console.log(random);
-
         return random;
     }
 }
