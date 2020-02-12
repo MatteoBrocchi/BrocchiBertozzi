@@ -1,11 +1,11 @@
- class Contenitore {
+class Contenitore {
     protected nome: string;
     protected quantita: number;
     protected codice: number;
     constructor(nome: string, quantita: number, codice: number) {
         this.nome = nome;
         this.quantita = quantita;
-        this.codice=codice;
+        this.codice = codice;
     }
     public getCodice(): number { return this.codice; }
     public getNome(): string { return this.nome; }
@@ -24,11 +24,14 @@ class BID extends Contenitore {
 }
 
 class Utilita {
-    static filtraggio(z: Contenitore[], contenitore:Contenitore): Contenitore[] {
-        for (let i: number = 0; i < z.length; i++) {
-            if (z[i].getNome() == contenitore.getNome()) {
-                for(let k:number=i;k<z.length-1;k++){
-                    z[k]=z[k+1];
+    static filtraggio(z: Contenitore[], contenitore: Contenitore): Contenitore[] {
+        for (let i: number = 0; i < z.length; i++)
+        {
+            if (z[i].getNome() == contenitore.getNome())
+            {
+                for (let k: number = i; k < z.length - 1; k++)
+                {
+                    z[k] = z[k + 1];
                 }
             }
         }
@@ -41,11 +44,14 @@ interface CMP {
 }
 class Codici {
     static getCodice(): number {
-        if (codici.length != 0) {
-            do {
+        if (codici.length != 0)
+        {
+            do
+            {
                 var trovato: boolean = false;
                 var random: number = Math.floor(Math.random() * 5999999);
-                for (let i: number = 0; i < codici.length; i++) {
+                for (let i: number = 0; i < codici.length; i++)
+                {
                     if (codici[i] != random) trovato = true;  /*inverto valore solo se trovo diverso*/
                 }
             } while (!trovato)
@@ -70,7 +76,7 @@ var B2: Contenitore = new BID(Codici.getCodice(), "Aceto", 4);
 listContenitori.push(B2);
 
 listContenitori = Utilita.filtraggio(listContenitori, L3);
-for (let i: number = 0; i < listContenitori.length; i++) {
-    console.log(listContenitori[i].getNome()+"-"+listContenitori[i].getQuantita()+"-"+listContenitori[i].getCodice());
+for (let i: number = 0; i < listContenitori.length; i++)
+{
+    console.log(listContenitori[i].getNome() + "-" + listContenitori[i].getQuantita() + "-" + listContenitori[i].getCodice());
 }
-
