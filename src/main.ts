@@ -3,7 +3,7 @@ import Utilita from "./utilita";
 import LAT from "./lattine";
 import BID from "./bidoni";
 import Codici from "./codici";
-
+/*TEST*/ 
 var listContenitori: Contenitore[] = new Array();   /*lista con tutti i contenitori*/
 /*RIEMPIMENTO CONTENITORI*/
 var L1: Contenitore = new LAT(Codici.getCodice(), "Acqua", 1);
