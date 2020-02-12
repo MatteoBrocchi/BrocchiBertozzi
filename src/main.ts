@@ -7,10 +7,6 @@ class Contenitore implements ICMP {
         this.quantita = quantita;
         this.codice = codice;
     }
-    public  compara(cont1:Contenitore, cont2:Contenitore)
-        var diff:number;
-        if( cont1 instanceof BID && cont2 instanceof BID ||cont1 instanceof LAT && cont2 instanceof LAT){
-            if(cont1.getQuantita()>cont2.getQuantita())diff=cont1.getQuantita()-cont2.getQuantita()
     public compara(cont1: Contenitore, cont2: Contenitore) {
         var diff: number;
         if (cont1 instanceof BID && cont2 instanceof BID || cont1 instanceof LAT && cont2 instanceof LAT)
