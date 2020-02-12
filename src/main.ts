@@ -1,4 +1,4 @@
-class Contenitore implements ICMP{
+class Contenitore implements ICMP {
     protected nome: string;
     protected quantita: number;
     protected codice: number;
@@ -8,11 +8,15 @@ class Contenitore implements ICMP{
         this.codice = codice;
     }
     public  compara(cont1:Contenitore, cont2:Contenitore)
-    {
         var diff:number;
         if( cont1 instanceof BID && cont2 instanceof BID ||cont1 instanceof LAT && cont2 instanceof LAT){
             if(cont1.getQuantita()>cont2.getQuantita())diff=cont1.getQuantita()-cont2.getQuantita()
-            else diff=cont2.getQuantita()-cont1.getQuantita()
+    public compara(cont1: Contenitore, cont2: Contenitore) {
+        var diff: number;
+        if (cont1 instanceof BID && cont2 instanceof BID || cont1 instanceof LAT && cont2 instanceof LAT)
+        {
+            if (cont1.getQuantita() > cont2.getQuantita()) diff = cont1.getQuantita() - cont2.getQuantita()
+            else diff = cont2.getQuantita() - cont1.getQuantita()
         }
         return diff;
     }
@@ -32,10 +36,12 @@ class BID extends Contenitore {
 }
 class Utilita {
     static filtraggio(z: Contenitore[], contenitore: Contenitore): Contenitore[] {
-        for (let i: number = 0; i < z.length; i++) {
-            if (z[i].getNome() == contenitore.getNome()) {
+        for (let i: number = 0; i < z.length; i++)
+        {
+            if (z[i].getNome() == contenitore.getNome())
+            {
                 z.splice(i, 1);
-                i=-1;
+                i = -1;
             }
         }
         return z;
@@ -43,7 +49,7 @@ class Utilita {
 }
 interface ICMP {
 
-    compara(cont1:Contenitore,cont2:Contenitore):number;
+    compara(cont1: Contenitore, cont2: Contenitore): number;
 }
 class Codici {
     static getCodice(): number {
@@ -84,9 +90,9 @@ listContenitori.push(B2);
 listContenitori = Utilita.filtraggio(listContenitori, L3);
 listContenitori = Utilita.filtraggio(listContenitori, B3);
 /*COMPARA*/
-console.log("Differenza="+listContenitori[0].compara(B2,B1));  //B2= 4 B1= 5
+console.log("Differenza=" + listContenitori[0].compara(B2, B1));  //B2= 4 B1= 5
 /*STAMPA*/
-for (let i: number = 0; i < listContenitori.length; i++) {
+for (let i: number = 0; i < listContenitori.length; i++)
+{
     console.log(listContenitori[i].getNome() + "-" + listContenitori[i].getQuantita() + "-" + listContenitori[i].getCodice());
 }
-
