@@ -4,6 +4,12 @@ class Contenitore {
         this.quantita = quantita;
         this.codice = codice;
     }
+    compara(cont1, cont2) {
+        var diff;
+        if ( instanceof cont1 == "BID")
+            var c = "giusto";
+        return diff;
+    }
     getCodice() { return this.codice; }
     getNome() { return this.nome; }
     getQuantita() { return this.quantita; }
@@ -22,9 +28,8 @@ class Utilita {
     static filtraggio(z, contenitore) {
         for (let i = 0; i < z.length; i++) {
             if (z[i].getNome() == contenitore.getNome()) {
-                for (let k = i; k < z.length - 1; k++) {
-                    z[k] = z[k + 1];
-                }
+                z.splice(i, 1);
+                i = -1;
             }
         }
         return z;
@@ -50,17 +55,25 @@ class Codici {
 }
 var codici = new Array(); /*lita con tutti i codici gia usciti*/
 var listContenitori = new Array(); /*lista con tutti i contenitori*/
+/*RIEMPIMENTO CONTENITORI*/
 var L1 = new LAT(Codici.getCodice(), "Acqua", 1);
 listContenitori.push(L1);
 var L3 = new LAT(Codici.getCodice(), "Acqua", 2);
 listContenitori.push(L3);
 var B1 = new BID(Codici.getCodice(), "Olio", 5);
 listContenitori.push(B1);
+var B3 = new BID(Codici.getCodice(), "Olio", 6);
+listContenitori.push(B3);
 var L2 = new LAT(Codici.getCodice(), "Vino", 2);
 listContenitori.push(L2);
 var B2 = new BID(Codici.getCodice(), "Aceto", 4);
 listContenitori.push(B2);
+/*FILTRAGGIO */
 listContenitori = Utilita.filtraggio(listContenitori, L3);
+listContenitori = Utilita.filtraggio(listContenitori, B3);
+/*COMPARA*/
+B1.compara(B1, B2);
+/*STAMPA*/
 for (let i = 0; i < listContenitori.length; i++) {
     console.log(listContenitori[i].getNome() + "-" + listContenitori[i].getQuantita() + "-" + listContenitori[i].getCodice());
 }
